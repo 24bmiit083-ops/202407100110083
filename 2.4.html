@@ -1,0 +1,64 @@
+<html>
+<head>
+  <title>City Information</title>
+  <style>
+  
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+  
+    }
+    .menu ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .menu li {
+      margin: 10px 0;
+    }
+    .menu a {
+      text-decoration: none;
+      color: blue;
+      font-weight: bold;
+    }
+    .content {
+      width: 75%;
+      border-left: 2px solid #ccc;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+    
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left Menu -->
+    <div class="menu">
+      <h3>Select a City</h3>
+      <ul>
+        <li><a href="#delhi" onclick="loadCity('delhi')">Delhi</a></li>
+        <li><a href="#mumbai" onclick="loadCity('mumbai')">Mumbai</a></li>
+        <li><a href="#chennai" onclick="loadCity('chennai')">Chennai</a></li>
+      </ul>
+    </div>
+
+    <!-- Right Content -->
+    <div class="content">
+      <iframe id="cityFrame" srcdoc="<h2>Welcome!</h2><p>Please select a city from the left menu to view details.</p>"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function loadCity(city) {
+      let content = {
+        delhi: "<h2>Delhi</h2><p>Delhi is the capital of India, known for its rich history, culture, and heritage sites such as the Red Fort and Qutub Minar.</p>",
+        mumbai: "<h2>Mumbai</h2><p>Mumbai is the financial capital of India, famous for Bollywood, the Gateway of India, and the bustling Marine Drive.</p>",
+        chennai: "<h2>Chennai</h2><p>Chennai is a major cultural and economic hub in South India, known for Marina Beach and classical Carnatic music.</p>"
+      };
+      document.getElementById("cityFrame").srcdoc = content[city];
+    }
+  </script>
+</body>
+</html>

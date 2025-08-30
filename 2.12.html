@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>Student Registration Form</title>
+</head>
+<body>
+
+  <h2>Student Registration Form</h2>
+
+  <form>
+    <!-- Full Name -->
+    <label>Full Name:</label>
+    <input type="text" name="fullname" required><br><br>
+
+    <!-- Email -->
+    <label>Email Address:</label>
+    <input type="email" name="email" required><br><br>
+
+    <!-- Course Selection -->
+    <label>Course Selection:</label>
+    <select name="course">
+      <option value="html">HTML Basics</option>
+      <option value="css">CSS Fundamentals</option>
+      <option value="js">JavaScript</option>
+      <option value="python">Python Programming</option>
+    </select><br><br>
+
+    <!-- Gender -->
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female
+    <input type="radio" name="gender" value="other"> Other<br><br>
+
+    <!-- Hobbies -->
+    <label>Hobbies:</label>
+    <input type="checkbox" name="hobby" value="reading"> Reading
+    <input type="checkbox" name="hobby" value="sports"> Sports
+    <input type="checkbox" name="hobby" value="music"> Music
+    <input type="checkbox" name="hobby" value="coding"> Coding<br><br>
+
+    <!-- Comments -->
+    <label>Comments / Special Requests:</label><br>
+    <textarea name="comments" rows="4" cols="40"></textarea><br><br>
+
+    <!-- Buttons -->
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+  </form>
+
+</body>
+</html>

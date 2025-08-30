@@ -1,0 +1,73 @@
+
+<html>
+<head>
+  <title>National Level Tech Fest 2025 - Registration Form</title>
+</head>
+<body>
+
+  <h2>National Level Tech Fest 2025 - Registration Form</h2>
+
+  <form action="submit_registration.php" method="post" enctype="multipart/form-data">
+    
+    <!-- Personal Details Section -->
+    <div>
+      <label><span>Full Name:</span></label>
+      <input type="text" name="fullname" required><br><br>
+      
+      <label><span>Email Address:</span></label>
+      <input type="email" name="email" required><br><br>
+
+      <label><span>Mobile Number:</span></label>
+      <input type="number" name="mobile" required><br><br>
+
+      <label><span>Gender:</span></label>
+      <input type="radio" name="gender" value="Male"> Male
+      <input type="radio" name="gender" value="Female"> Female
+      <input type="radio" name="gender" value="Other"> Other<br><br>
+    </div>
+
+    <!-- Location Section -->
+    <div>
+      <label><span>City:</span></label>
+      <select name="city" required>
+        <option value="">--Select City--</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Hyderabad">Hyderabad</option>
+      </select><br><br>
+    </div>
+
+    <!-- Events Section -->
+    <div>
+      <label><span>Select Events:</span></label><br>
+      <input type="checkbox" name="event" value="Coding"> Coding <br>
+      <input type="checkbox" name="event" value="Poster Making"> Poster Making <br>
+      <input type="checkbox" name="event" value="Quiz"> Quiz <br>
+      <input type="checkbox" name="event" value="Robotics"> Robotics <br><br>
+    </div>
+
+    <!-- File Upload -->
+    <div>
+      <label><span>Upload College ID:</span></label>
+      <input type="file" name="college_id" required><br><br>
+    </div>
+
+    <!-- Special Requirements -->
+    <div>
+      <label><span>Special Requirements:</span></label><br>
+      <textarea name="requirements" rows="4" cols="40"></textarea><br><br>
+    </div>
+
+    <!-- Buttons -->
+    <div>
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </div>
+
+  </form>
+
+</body>
+</html>

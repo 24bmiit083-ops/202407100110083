@@ -1,0 +1,80 @@
+<html>
+<head>
+  <title>welcome to website </title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    .banner {
+      background: #4CAF50;
+      color: white;
+      text-align: left;
+      padding: 20px;
+    }
+    .container {
+      display: flex;
+      height: calc(100vh - 80px);
+    }
+    .nav {
+      width: 25%;
+      background: #f0f0f0;
+      padding: 20px;
+    }
+    .nav ul { list-style: none; padding: 0; }
+    .nav li { margin: 10px 0; }
+    .nav a {
+      text-decoration: none;
+      color: blue;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .content { flex: 1; border-left: 2px solid #ccc; }
+    iframe { width: 100%; height: 100%; border: none; }
+  </style>
+</head>
+<body>
+  <!-- Top Banner -->
+  <div class="banner">
+    <h1>welcome to website</h1>
+  </div>
+
+  <!-- Left Navigation + Right Content -->
+  <div class="container">
+    <div class="nav">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a onclick="loadPage('welcome')">Home</a></li>
+        <li><a onclick="loadPage('HTML')">HTML</a></li>
+        <li><a onclick="loadPage('LINUX')">LINUX</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <iframe id="contentFrame"></iframe>
+    </div>
+  </div>
+
+  <script>
+    // Page content stored in JavaScript
+    const pages = {
+      welcome: `
+        <h2>Welcome</h2>
+        <p>Select a page to view content .</p>
+      `,
+      HTML: `
+        <h2>HTML</h2>
+        <p>html language is use for web designing.</p>
+      `,
+      LINUX: `
+        <h2>LINUX</h2>
+        <p>The Linux involves different programming languages at different levels.</p>
+      `
+    };
+
+    // Function to load content into iframe
+    function loadPage(page) {
+      document.getElementById("contentFrame").srcdoc = pages[page];
+    }
+
+    // Load welcome page by default
+    loadPage("welcome");
+  </script>
+</body>
+</html>

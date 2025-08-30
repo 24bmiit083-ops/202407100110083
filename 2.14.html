@@ -1,0 +1,169 @@
+<html>
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Library Portal</title>
+    <style>
+        * {
+          
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Frame */
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            text-align: left;
+            display: flex;
+            align-items:left;
+            justify-content: left;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            background: white;
+            color: #2c3e50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Main Layout */
+        .main-container {
+            display: flex;
+            flex: 1;
+        }
+
+        /* Left Frame - Sidebar */
+        .sidebar {
+            width: 200px;
+            background: #34495e;
+            padding: 20px;
+        }
+
+        .category-item {
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+
+        .category-item:hover {
+            background: #2980b9;
+        }
+
+        /* Main Content Frame */
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .book-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Frame -->
+    <header class="header">
+        <div class="logo">DL</div>
+        <h1>Digital Library Portal</h1>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="main-container">
+        <!-- Left Frame - Sidebar -->
+        <nav class="sidebar">
+            <div class="category-item" onclick="showCategory('all')">All Books</div>
+            <div class="category-item" onclick="showCategory('science')">Science</div>
+            <div class="category-item" onclick="showCategory('literature')">Literature</div>
+            <div class="category-item" onclick="showCategory('technology')">Technology</div>
+            <div class="category-item" onclick="showCategory('history')">History</div>
+            <div class="category-item" onclick="showCategory('biographies')">Biographies</div>
+        </nav>
+
+        <!-- Main Content Frame -->
+        <main class="content" id="content">
+            <h2>Welcome to Digital Library</h2>
+            <p>Select a category to browse books</p>
+        </main>
+    </div>
+
+    <script>
+        const books = {
+            science: [
+                {title: "A Brief History of Time", author: "Stephen Hawking"},
+                {title: "Cosmos", author: "Carl Sagan"}
+            ],
+            literature: [
+                {title: "To Kill a Mockingbird", author: "Harper Lee"},
+                {title: "1984", author: "George Orwell"}
+            ],
+            technology: [
+                {title: "Clean Code", author: "Robert C. Martin"},
+                {title: "Design Patterns", author: "Erich Gamma"}
+            ],
+            history: [
+                {title: "Sapiens", author: "Yuval Noah Harari"},
+                {title: "Guns, Germs, and Steel", author: "Jared Diamond"}
+            ],
+            biographies: [
+                {title: "Steve Jobs", author: "Walter Isaacson"},
+                {title: "Einstein", author: "Walter Isaacson"}
+            ]
+        };
+
+        function showCategory(category) {
+            const content = document.getElementById('content');
+            
+            if (category === 'all') {
+                content.innerHTML = '<h2>All Books</h2>';
+                for (const cat in books) {
+                    if (books.hasOwnProperty(cat)) {
+                        content.innerHTML += `<h3>${cat.charAt(0).toUpperCase() + cat.slice(1)}</h3>`;
+                        books[cat].forEach(book => {
+                            content.innerHTML += `
+                                <div class="book-item">
+                                    <strong>${book.title}</strong><br>
+                                    Author: ${book.author}
+                                </div>
+                            `;
+                        });
+                    }
+                }
+                return;
+            }
+
+            content.innerHTML = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)} Books</h2>`;
+            
+            if (books[category]) {
+                books[category].forEach(book => {
+                    content.innerHTML += `
+                        <div class="book-item">
+                            <strong>${book.title}</strong><br>
+                            Author: ${book.author}
+                        </div>
+                    `;
+                });
+            } else {
+                content.innerHTML += '<p>No books found in this category.</p>';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      background-color: #444;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+    .headlines {
+      flex: 2;
+      background: white;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 5px;
+    }
+    .categories {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .category {
+      background: white;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Global News Portal</h1>
+    <p>Your source for the latest news worldwide</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">World</a>
+    <a href="#">Politics</a>
+    <a href="#">Sports</a>
+    <a href="#">Entertainment</a>
+    <a href="#">Technology</a>
+  </nav>
+
+  <div class="container">
+    <!-- Headlines Section -->
+    <div class="headlines">
+      <h2>Top Headlines</h2>
+      <ul>
+        <li><a href="#">Global Leaders Meet to Discuss Climate Change</a></li>
+        <li><a href="#">Stock Market Sees Major Growth in Tech Sector</a></li>
+        <li><a href="#">Sports Championship: Exciting Final Match Highlights</a></li>
+        <li><a href="#">Entertainment: New Movie Breaks Box Office Records</a></li>
+      </ul>
+    </div>
+
+    <!-- Categories Section -->
+    <div class="categories">
+      <div class="category">
+        <h3>Politics</h3>
+        <p>Election updates: Key states report early results.</p>
+      </div>
+      <div class="category">
+        <h3>Sports</h3>
+        <p>Football season begins with thrilling opening match.</p>
+      </div>
+      <div class="category">
+        <h3>Technology</h3>
+        <p>New smartphone release features AI-powered tools.</p>
+      </div>
+      <div class="category">
+        <h3>Entertainment</h3>
+        <p>Music festival attracts record-breaking crowd.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Global News Portal | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
